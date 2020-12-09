@@ -57,17 +57,16 @@ body {
     width: 100%;
     padding: 0;
     margin: 0;
-    text-align: center;
 }
 
 .nav__item {
     box-sizing: border-box;
     display: inline-block;
-    width: 24%;
-    text-align: center;
+    width: 100%;
     line-height: 24px;
     padding: 24px;
     text-transform: uppercase;
+    border-bottom: 1px solid rgb(194, 190, 190);
 }
 
 .nav a {
@@ -80,6 +79,33 @@ body {
     color: #000;
 }
 
+/*
+ * Drawer
+ */
+
+#drawer {
+    width: 360px;
+    position: absolute;
+     /* menyembunyikan #drawer -250px (sesuai dengan ukuran lebar drawer) ke kiri */
+    transform: translate(-360px, 0);
+    transition: transform 0.3s ease-in-out;
+    background-color:#FFF;
+}
+
+#drawer.open {
+    transform: translate(0, 0);
+}
+
+#hamburger {
+    font-size: 32px;
+    text-decoration: none;
+    color: black;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 15px;
+}
 
 /*
  * Jumbotron
@@ -315,6 +341,23 @@ footer a {
     .posts {
         grid-template-columns: repeat(2, 1fr);
         column-gap: 15px;
+    }
+
+    #hamburger {
+        display: none;
+    }
+
+    .nav__item {
+        width: 24%;
+        text-align: center;
+        border: none;
+    }
+
+    #drawer {
+        width: 100%;
+        position: inline-block;
+        transform: translate(0, 0);
+        background-color:#FFF;
     }
 }
 
